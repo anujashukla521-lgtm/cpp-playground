@@ -30,14 +30,14 @@ I am currently a *BCA student*, and this repo helps me:
 
 If you're learning C++ too, feel free to check the codes 😊  
 
-💡 My Learning Goals
+## My Learning Goals
 
 ✔ Write clean & understandable code
 ✔ Practice daily
 ✔ Get strong in problem-solving
 ✔ Prepare for placements & interviews
 
-⭐ Support & Feedback
+⭐# Support & Feedback
 If you like this repo, you can star ⭐ it — it motivates me a lot!
 You can also suggest improvements or new problems to try 🙂
 
