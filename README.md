@@ -30,16 +30,6 @@ I am currently a *BCA student*, and this repo helps me:
 
 If you're learning C++ too, feel free to check the codes 😊  
 
-## 🚀 How to Run These Programs
-
-1️⃣ Install a C++ compiler (like `g++`)  
-2️⃣ Open terminal / command prompt  
-3️⃣ Run the program using:
-```bash
-g++ filename.cpp
-./a.exe   (Windows)
-./a.out   (Mac / Linux)
-
 💡 My Learning Goals
 
 ✔ Write clean & understandable code
