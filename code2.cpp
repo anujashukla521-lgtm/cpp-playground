@@ -1,3 +1,5 @@
+//Program of Single inheritance showing price and discount percent of the product
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -51,4 +53,5 @@ int main()
     p1.priceCal();
     p1.show();
     return 0;
+
 }
