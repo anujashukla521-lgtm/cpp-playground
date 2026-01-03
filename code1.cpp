@@ -1,4 +1,4 @@
-////Program of class to exchange values of objects with the help of "friend" function
+//Program of class to exchange values of objects with the help of "friend" function
 
 #include <iostream>
 using namespace std;
@@ -59,4 +59,5 @@ int main()
     oc2.display();
     return 0;
 }
+
 
