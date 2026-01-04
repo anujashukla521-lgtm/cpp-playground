@@ -1,75 +1,35 @@
+// A basic C++ program that demonstrates how to use structures and arrays together by storing and printing details of 5 students.
+
 #include <iostream>
 #include <string>
 using namespace std;
 
-const float PI = 3.14;
-class Shape
+struct Student
 {
-protected:
-    string color;
-
-public:
-    Shape(string c)
-    {
-        color = c;
-    }
-};
-class Rectangle : public Shape
-{
-    float length;
-    float breadth;
-
-public:
-    Rectangle(string c, float l, float b) : Shape(c)
-    {
-
-        length = l;
-        breadth = b;
-    }
-    void display()
-    {
-        cout << "\n\n-------Rectangle--------------" << endl;
-        cout << "Color of the rectangle: " << color << endl;
-        cout << "Length of the rectangle: " << length << endl;
-        cout << "Breadth of the rectangle: " << breadth << endl;
-        cout << "Area of the rectangle: " << length * breadth << endl;
-    }
-};
-class Circle : public Shape
-{
-    float radius;
-
-public:
-    Circle(string c, float r) : Shape(c)
-    {
-        radius = r;
-    }
-    void display()
-    {
-        cout << "\n\n-------Circle-------------" << endl;
-        cout << "Color of the circle: " << color << endl;
-        cout << "Radius of the circle: " << radius << endl;
-
-        cout << "Area of the circle: " << PI * radius * radius << endl;
-    }
+    int roll_no;
+    string name;
+    float marks;
 };
 int main()
 {
-    string c;
-    float l, b, r;
-    cout << "Enter color of the rectangle:" << endl;
-    getline(cin, c);
-    cout << "Enter length and breadth of the rectangle:" << endl;
-    cin >> l >> b;
-    Rectangle rect(c, l, b);
-    rect.display();
+    struct Student s[5];
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "Enter roll number of student " << i + 1 << endl;
+        cin >> s[i].roll_no;
+        cout << "Enter name of student " << i + 1 << endl;
+        cin.ignore();
+        getline(cin, s[i].name);
+        cout << "Enter marks of student " << i + 1 << endl;
+        cin >> s[i].marks;
+    }
+    cout << "\n\n----------Displaying details----------" << endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "Roll number of student " << i + 1 << ":" << s[i].roll_no << endl;
+        cout << "Name of student " << i + 1 << ":" << s[i].name << endl;
+        cout << "Marks of student " << i + 1 << ":" << s[i].marks << endl;
+    }
 
-    cout << "\n\nEnter color of the circle:" << endl;
-    cin.ignore();
-    getline(cin, c);
-    cout << "Enter radius of the circle:" << endl;
-    cin >> r;
-    Circle c1(c, r);
-    c1.display();
     return 0;
 }
