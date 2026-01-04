@@ -1,57 +1,24 @@
-//C++ program showing multiple
-// inheritance, used to generate a royalty count based on price of the publication.
-#include<iostream>
-#include<string>
+// A basic C++ program that helps beginners understand structures by performing addition of two complex numbers.
+
+#include <iostream>
 using namespace std;
 
-class Publication{
-    string title;
-    float price;
-    public:
-    void setTitle(){
-        cout<<"Enter title of the Publication: "<<endl;
-      getline(cin,title);
-    }
-    string getTitle(){
-        return title;
-    }
-    
-    void setPrice(){
-        cout<<"Enter price of the Publication: "<<endl;
-        cin>>price;
-    }
-    float getPrice(){
-        return price;
-    }
-
+struct Complex
+{
+    int real;
+    int imag;
 };
-class Sales{
-    int copiesSold;
-    public:
-     void setSales(){
-        cout<<"Enter number of copies sold "<<endl;
-        cin>>copiesSold;
-    }
-    int getSales(){
-        return copiesSold;
-    }
-};
-class Royalty : public Publication, public Sales{
-    float royalty;
-    public:
-    void display(){
-        royalty = getPrice()*getSales()*0.10;
-        cout<<"Title of the publication: "<<getTitle()<<endl;
-        cout<<"Price of the publication: "<<getPrice()<<endl;
-        cout<<"Number of copies sold: "<<getSales()<<endl;
-        cout<<"Royalty count: "<<royalty<<endl;
-    }
-};
-int main(){
-    Royalty r;
-    r.setTitle();
-    r.setPrice();
-    r.setSales();
-    r.display();
+int main()
+{
+    struct Complex c1, c2;
+    cout << "Enter two real numbers:" << endl;
+    cin >> c1.real >> c2.real;
+    cout << "Enter two imaginary numbers:" << endl;
+    cin >> c1.imag >> c2.imag;
+    cout << "Two complex numbers are:" << endl;
+    cout << c1.real << " + " << c1.imag << "i" << endl;
+    cout << c2.real << " + " << c2.imag << "i" << endl;
+    cout << "Sum of two complex numbers:" << endl;
+    cout << c1.real + c2.real << " + " << c1.imag + c2.imag << "i" << endl;
     return 0;
 }
