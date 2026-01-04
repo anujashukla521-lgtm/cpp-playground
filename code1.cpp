@@ -1,63 +1,30 @@
-//Program of class to exchange values of objects with the help of "friend" function
+// A basic C++ program that helps beginners understand arrays and loops by finding the largest and smallest number from a list of 5 user-entered values.
 
 #include <iostream>
 using namespace std;
 
-class c2;
-class c1
-{
-    int val1;
-    friend void exchange(c1 &, c2 &);
-
-public:
-    void inData(int a)
-    {
-        val1 = a;
-    }
-    void display(void)
-    {
-        cout << val1 << endl;
-    }
-};
-
-class c2
-{
-    int val2;
-    friend void exchange(c1 &, c2 &);
-
-public:
-    void inData(int a)
-    {
-        val2 = a;
-    }
-    void display(void)
-    {
-        cout << val2 << endl;
-    }
-};
-
-void exchange(c1 &x, c2 &y)
-{
-    int temp = x.val1;
-    x.val1 = y.val2;
-    y.val2 = temp;
-}
 int main()
 {
-    c1 oc1;
-    c2 oc2;
-    oc1.inData(4);
-    oc2.inData(5);
-    cout << "Value of c1 before exchanging:";
-    oc1.display();
-    cout << "Value of c2 before exchanging:";
-    oc2.display();
-    exchange(oc1, oc2);
-    cout << "Value of c1 after exchanging:";
-    oc1.display();
-    cout << "Value of c2 after exchanging:";
-    oc2.display();
+    int arr[5], largest, smallest;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "Enter number " << i + 1 << endl;
+        cin >> arr[i];
+    }
+    largest = smallest = arr[0];
+
+    for (int i = 0; i < 5; i++)
+    {
+        if (arr[i] > largest)
+        {
+            largest = arr[i];
+        }
+        if (arr[i] < smallest)
+        {
+            smallest = arr[i];
+        }
+    }
+    cout << "Largest number: " << largest << endl;
+    cout << "Smallest number: " << smallest << endl;
     return 0;
 }
-
-
