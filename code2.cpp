@@ -1,57 +1,32 @@
-//Program of Single inheritance showing price and discount percent of the product
+// A basic C++ program that helps beginners understand functions and loops by checking if a number entered by the user is prime.
 
 #include <iostream>
-#include <string>
 using namespace std;
 
-class Product
+bool isPrime(int n)
 {
-protected:
-    string name;
-    float price;
+    if (n <= 1)
+        return false;
 
-public:
-    Product() {}
-    Product(string n, float p)
+    for (int i = 2; i <= n / 2; i++)
     {
-        name = n;
-        price = p;
+        if (n % i == 0)
+            return false;
     }
-};
-class discountedProduct : public Product
-{
-    float discountPercent;
-    float finalPrice;
 
-public:
-    discountedProduct() {}
-    discountedProduct(string n, float p, float dp)
-        : Product(n, p)
-    {
-        discountPercent = dp;
-    }
-    void priceCal(void)
-    {
-        finalPrice = price - (price * discountPercent / 100);
-    }
-    void show()
-    {
-        cout << "The final price of the product " << name
-             << " with price " << price
-             << " after discount percent of " << discountPercent
-             << "% is " << finalPrice << endl;
-    }
-};
+    return true;
+}
+
 int main()
 {
-    string n;
-    float p, dp;
-    cout << "Enter name, price and discount percent of product" << endl;
-    getline(cin, n);
-    cin >> p >> dp;
-    discountedProduct p1(n, p, dp);
-    p1.priceCal();
-    p1.show();
-    return 0;
+    int num;
+    cout << "Enter any number: ";
+    cin >> num;
 
+    if (isPrime(num))
+        cout << num << " is a prime number." << endl;
+    else
+        cout << num << " is not a prime number." << endl;
+
+    return 0;
 }
