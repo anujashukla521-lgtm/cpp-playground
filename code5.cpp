@@ -1,70 +1,37 @@
-// C++ program showing multiple
-// inheritance, used to generate an attendance report based on student details and attendance percentage.
+// A basic C++ program for beginners to learn how to use structures to handle multiple student records.
 
 #include <iostream>
-#include <string>
 using namespace std;
 
-class Student
+struct Student
 {
-protected:
     int roll_no;
-    string name;
-
-public:
-    Student(int r, string n) : roll_no(r), name(n) {} // initialization list
-};
-class Attendance
-{
-protected:
-    int attendance_percent;
-
-public:
-    Attendance(int a) : attendance_percent(a) {} // initialization list
-};
-class FinalReport : public Student, public Attendance
-{
-    string remark;
-
-public:
-    FinalReport(int r, string n, int a)
-        : Student(r, n), Attendance(a) {}
-    void grade()
-    {
-        if (attendance_percent >= 75)
-        {
-            remark = "Allowed";
-        }
-        else
-        {
-            remark = "Short Attendance";
-        }
-    }
-    void display()
-    {
-        grade();
-        cout << "\n\n---------Student's Attendance Details------------" << endl;
-        cout << "Roll no of the student: " << roll_no << endl;
-        cout << "Name of the student: " << name << endl;
-        cout << "Percentage of attendance: " << attendance_percent << endl;
-        cout << "Remark of the student: " << remark << endl;
-    }
+    char name[50];
+    float marks;
 };
 int main()
 {
-    int r, a;
-    string n;
-    cout << "Enter roll number of the student: " << endl;
-    cin >> r;
+    struct Student s[3];
+    cout << "---------Getting data of students---------" << endl;
+    for (int i = 0; i < 3; i++)
+    {
+        cout << "Input details for student " << i + 1 << endl;
+        cout << "Roll number of the student: " << endl;
+        cin >> s[i].roll_no;
 
-    cout << "Enter name of the student: " << endl;
-    cin.ignore();
-    getline(cin, n);
+        cout << "Name of the student: " << endl;
+        cin >> s[i].name;
 
-    cout << "Enter percentage of attendance: " << endl;
-    cin >> a;
-
-    FinalReport fr(r, n, a);
-    fr.display();
+        cout << "Marks of the student: " << endl;
+        cin >> s[i].marks;
+    }
+    cout << "\n\n---------Displaying data of students---------\n " << endl;
+    for (int i = 0; i < 3; i++)
+    {
+        cout << "Data of Student " << i + 1 << endl;
+        cout << "Roll no: " << s[i].roll_no << endl;
+        cout << "Name: " << s[i].name << endl;
+        cout << "Marks: " << s[i].marks << endl;
+    }
     return 0;
 }
