@@ -28,3 +28,4 @@ int main()
     cout << "Smallest number: " << smallest << endl;
     return 0;
 }
+
