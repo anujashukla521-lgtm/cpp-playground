@@ -30,6 +30,8 @@ and improving problem-solving skills.
 
 * Practice and strengthen C++ fundamentals.
 * Experiment with new concepts freely.
+* Build confidence in writing C++ code.
+* Maintain a learning playground alongside DSA.
   
 📌 Note
 
@@ -39,6 +41,4 @@ This is a learning-focused repository. Some programs are exploratory and may not
 
 Feel free to explore the code and learn along with me as I continue my C++ journey.
 
-Build confidence in writing C++ code
 
-Maintain a learning playground alongside DSA
